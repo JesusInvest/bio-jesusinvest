@@ -1,0 +1,44 @@
+---
+/**
+ * Update the details below to match your personal information
+ */
+
+enum DetailType {
+	title = 'title',
+	subtitle = 'subtitle',
+	description = 'description',
+}
+
+const details: {
+	type: DetailType;
+	content: string;
+}[] = [
+	{
+		type: DetailType.title,
+		content: `JesusInvest`,
+	},
+	{
+		type: DetailType.subtitle,
+		content: 'Plataforma de Missão',
+	},
+	{
+		type: DetailType.description,
+		content: 'A plataforma é um ecossistema digital voltado para a obra missionária, oferecendo três pilares principais: transparência, comunicação e captação de recursos. 🚀💻',
+	},
+];
+
+const getClass = (type: DetailType) => {
+	switch (type) {
+		case DetailType.title:
+			return 'font-sora text-3xl font-bold tracking-wide md:text-4xl animate-fade-up duration-300';
+		case DetailType.subtitle:
+			return 'font-normal tracking-wide text-sm duration-300';
+		case DetailType.description:
+			return 'md:w-3/5 px-4 md:px-0 text-center font-normal tracking-wide text-base animate-fade-in duration-300';
+	}
+};
+---
+
+<div class="grid grid-cols-1 place-content-center place-items-center gap-5">
+	{details.map((detail) => <p class={getClass(detail.type)}>{detail.content}</p>)}
+</div>

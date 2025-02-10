@@ -1,0 +1,28 @@
+---
+import Avatar from '../components/Avatar.astro';
+import Details from '../components/Details.astro';
+import Socials from '../components/Socials.astro';
+import Layout from '../layouts/Layout.astro';
+
+/**
+ * Replace the values below with your own information
+ */
+const title = "JesusInvest • Transparência, Comunicação e Captação de Recursos para Missão";
+const siteName = 'JesusInvest';
+const siteDescription = 'Plataforma de Missão';
+---
+
+<Layout title={title} siteName={siteName} siteDescription={siteDescription}>
+	<Avatar />
+	<Details />
+	<Socials />
+	<div class="w-full max-w-[90%] md:max-w-[60%] lg:max-w-[40%] flex mt-8">
+		<div class="block mx-auto w-full space-y-4">
+			<p class="text-lg font-semibold text-center">Formulário de interesse</p>
+			<div class="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-4">
+				<a href="javascript:void(0);" target="_blank" rel="nofollow noopner" class="bg-violet-600 hover:bg-violet-700 p-4 w-full rounded-lg font-medium text-white text-center transition duration-300 hover:scale-105 animate-zoom-in">Missionário</a>
+				<a href="javascript:void(0);" target="_blank" rel="nofollow noopner" class="bg-violet-600 hover:bg-violet-700 p-4 w-full rounded-lg font-medium text-white text-center transition duration-300 hover:scale-105 animate-zoom-in">Agência missionária</a>
+			</div>
+		</div>
+	</div>
+</Layout>

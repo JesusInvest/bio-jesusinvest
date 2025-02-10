@@ -1,0 +1,66 @@
+---
+import { AstroFont } from 'astro-font';
+
+interface Props {
+	title: string;
+	siteName: string;
+	siteDescription: string;
+}
+
+const { title, siteName, siteDescription } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt">
+	<head>
+		<meta charset="utf-8" />
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+
+		<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+		<link rel="manifest" href="favicons/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		 
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={siteDescription} />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={siteDescription} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<AstroFont
+			config={[
+				{
+					src: [],
+					name: 'Sora',
+					preload: false,
+					display: 'swap',
+					fallback: 'sans-serif',
+					selector: '.font-sora',
+					googleFontsURL: 'https://fonts.googleapis.com/css2?family=Sora:wght@100..800',
+				},
+			]}
+		/>
+	</head>
+	<body>
+		<div class="bg-zinc-100 bg-horizonAnimated bg-cover bg-scroll bg-center bg-no-repeat py-12 md:py-0">
+			<div class="grid min-h-dvh grid-cols-1 place-content-center place-items-center gap-5">
+				<slot />
+			</div>
+		</div>
+	</body>
+</html>
